@@ -3,18 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Tests.SearchEmployee">
+      <class name="Tests.InvalidLogin">
         <methods>
-          <include name="verifyEmployee"/>
+          <include name="InvalidLoginData" invocation-numbers="3"/>
+          <include name="intialize"/>
         </methods>
-      </class> <!-- Tests.SearchEmployee -->
-      <class name="Tests.AddEmployee">
-        <methods>
-          <include name="initialize"/>
-          <include name="addEmpNavigation"/>
-          <include name="fillEmpDetails" invocation-numbers="0 1 2 3 4"/>
-        </methods>
-      </class> <!-- Tests.AddEmployee -->
+      </class> <!-- Tests.InvalidLogin -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

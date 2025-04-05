@@ -1,5 +1,7 @@
 package Tests;
 
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,12 +24,18 @@ public void Invalid() {
 }
 	@Test(dataProvider = "invalidLoginData", dataProviderClass = LoginDataProvider.class)
 	public void InvalidLoginData(String email, String pass) throws InterruptedException {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--icnogita");
 		Thread.sleep(2000);
 		lp.getUserName().sendKeys(email);
 		lp.getPass().sendKeys(pass);
 		lp.getLoginBtn().click();
 		Thread.sleep(2000);
+		
+		Thread.sleep(2000);
 		lp.getUserName().clear();
 		lp.getPass().clear();
+		
+		
 	}
 }
